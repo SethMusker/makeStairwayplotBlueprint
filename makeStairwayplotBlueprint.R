@@ -7,15 +7,6 @@ myrandfunc<-function(nseq) {
             (nseq-2)*3/4, nseq-2))
 }
 
-# foldSFS<-function(sfs) {
-#   out<-NULL
-#   for(i in 0:((length(sfs)-length(sfs-1)*.5))) {
-#     out<-c(out,sfs[i+1]+sfs[length(sfs)-i])
-#   }
-#   return(out)
-# }
-
-foldSFS <- function(sfs) (sfs + rev(sfs))[1:ceiling(length(sfs)/2)]
 
 foldSFS<-function(sfs) {
   out<-(sfs+rev(sfs))[1:ceiling(length(sfs)/2)]
@@ -339,15 +330,25 @@ fontsize: {fontsize} # Font size
 # points(sfs_fold[-c(1,length(sfs_fold))],col="blue")
 
 ## Folding code from https://github.com/shenglin-liu/vcf2sfs/blob/master/vcf2sfs.r
-fold.sfs<-function(sfs)
-{
-  sfs[]<-sfs+rev(sfs)
-  dims<-dim(sfs)
-  cnt.pool<-rowSums(expand.grid(lapply(dims-1,function(x)0:x)))
-  index<-cnt.pool>(sum(dims-1)/2)
-  sfs[index]<-0
-  index<-cnt.pool==(sum(dims-1)/2)
-  sfs[index]<-sfs[index]/2
-  sfs
-}
+# fold.sfs<-function(sfs)
+# {
+#   sfs[]<-sfs+rev(sfs)
+#   dims<-dim(sfs)
+#   cnt.pool<-rowSums(expand.grid(lapply(dims-1,function(x)0:x)))
+#   index<-cnt.pool>(sum(dims-1)/2)
+#   sfs[index]<-0
+#   index<-cnt.pool==(sum(dims-1)/2)
+#   sfs[index]<-sfs[index]/2
+#   sfs
+# }
+
+                                       # foldSFS<-function(sfs) {
+#   out<-NULL
+#   for(i in 0:((length(sfs)-length(sfs-1)*.5))) {
+#     out<-c(out,sfs[i+1]+sfs[length(sfs)-i])
+#   }
+#   return(out)
+# }
+
+# foldSFS <- function(sfs) (sfs + rev(sfs))[1:ceiling(length(sfs)/2)]
 
