@@ -1,4 +1,4 @@
-setwd("C:/Users/user/Documents/Yinhla_stairwayplot/stairway-plot-v2-master/stairway_plot_v2.1.2")
+
 
 library(glue)
 
